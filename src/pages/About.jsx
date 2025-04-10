@@ -34,13 +34,11 @@ export default function About() {
               <div className='flex items-start space-x-4'>
                 <img
                   src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200'
-                  alt='John Doe'
+                  alt='Anton'
                   className='w-16 h-16 rounded-full object-cover'
                 />
                 <div>
-                  <h3 className='text-xl font-semibold text-gray-900'>
-                    John Doe
-                  </h3>
+                  <h3 className='text-xl font-semibold text-gray-900'>Anton</h3>
                   <p className='text-gray-600'>Lead Developer & Writer</p>
                   <p className='text-gray-500 mt-2'>
                     Passionate about React, TypeScript, and clean code
@@ -52,12 +50,12 @@ export default function About() {
               <div className='flex items-start space-x-4'>
                 <img
                   src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200'
-                  alt='Jane Smith'
+                  alt='Duc Anh'
                   className='w-16 h-16 rounded-full object-cover'
                 />
                 <div>
                   <h3 className='text-xl font-semibold text-gray-900'>
-                    Jane Smith
+                    Duc Anh
                   </h3>
                   <p className='text-gray-600'>UI/UX Designer & Writer</p>
                   <p className='text-gray-500 mt-2'>

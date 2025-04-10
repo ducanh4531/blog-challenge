@@ -1,9 +1,10 @@
+import DOMPurify from 'dompurify';
 import { useParams } from 'react-router-dom';
 import BlogPost from '../components/BlogPost';
 import Header from '../components/Header';
 
 // Sample article content (in a real app, this would come from an API or database)
-const articles = {
+const mockArticles = {
   1: {
     id: 1,
     title: 'Getting Started with React and Tailwind CSS',
@@ -35,18 +36,17 @@ const articles = {
         <li>Optimize for production</li>
       </ul>
     `,
-    author: 'John Doe',
+    author: 'Anton',
     date: '2024-03-20',
     category: 'React',
     imageUrl:
       'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
   },
-  // Add more articles here
 };
 
 // Get related articles based on category
 const getRelatedArticles = (currentArticle) => {
-  return Object.values(articles)
+  return Object.values(mockArticles)
     .filter(
       (article) =>
         article.id !== currentArticle.id &&
@@ -57,7 +57,11 @@ const getRelatedArticles = (currentArticle) => {
 
 export default function ArticleView() {
   const { id } = useParams();
-  const article = articles[id];
+  const article = mockArticles[id];
+
+  const sanitizedData = () => ({
+    __html: DOMPurify.sanitize(article.content),
+  });
 
   if (!article) {
     return (
@@ -97,7 +101,7 @@ export default function ArticleView() {
           <div className='flex items-center text-gray-600 mb-8'>
             <span className='mr-4'>{article.author}</span>
             <span className='mr-4'>•</span>
-            <time dateTime={article.date}>
+            <time className='mr-4' dateTime={article.date}>
               {new Date(article.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
@@ -115,7 +119,7 @@ export default function ArticleView() {
         <div className='bg-white rounded-2xl shadow-sm p-8 md:p-12 mb-12'>
           <div
             className='prose prose-lg max-w-none'
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={sanitizedData()}
           />
         </div>
 

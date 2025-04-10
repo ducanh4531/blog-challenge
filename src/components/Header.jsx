@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,15 +14,24 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className='hidden sm:flex sm:items-center sm:space-x-8'>
-            <a href='/' className='text-gray-700 hover:text-gray-900'>
+            <Link
+              to='/'
+              className='text-blue-600 hover:text-gray-700 font-medium'
+            >
               Home
-            </a>
-            <a href='/articles' className='text-gray-700 hover:text-gray-900'>
+            </Link>
+            <Link
+              to='/articles'
+              className='text-blue-600 hover:text-gray-700 font-medium'
+            >
               Articles
-            </a>
-            <a href='/about' className='text-gray-700 hover:text-gray-900'>
+            </Link>
+            <Link
+              to='/about'
+              className='text-blue-600 hover:text-gray-700 font-medium'
+            >
               About
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -60,24 +70,24 @@ export default function Header() {
         {isMenuOpen && (
           <div className='sm:hidden'>
             <div className='pt-2 pb-3 space-y-1'>
-              <a
-                href='/'
+              <Link
+                to='/'
                 className='block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50'
               >
                 Home
-              </a>
-              <a
-                href='/articles'
+              </Link>
+              <Link
+                to='/articles'
                 className='block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50'
               >
                 Articles
-              </a>
-              <a
-                href='/about'
+              </Link>
+              <Link
+                to='/about'
                 className='block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50'
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
         )}

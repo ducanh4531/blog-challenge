@@ -9,7 +9,7 @@ const allBlogPosts = [
     title: 'Getting Started with React and Tailwind CSS',
     excerpt:
       "Learn how to set up a modern web development environment using React and Tailwind CSS. We'll cover installation, configuration, and best practices.",
-    author: 'John Doe',
+    author: 'Anton',
     date: '2024-03-20',
     category: 'React',
     imageUrl:
@@ -20,7 +20,7 @@ const allBlogPosts = [
     title: 'Building Responsive Layouts',
     excerpt:
       "Discover the power of Tailwind CSS's responsive design utilities and how to create beautiful, mobile-first layouts that work across all devices.",
-    author: 'Jane Smith',
+    author: 'Duc Anh',
     date: '2024-03-19',
     category: 'CSS',
     imageUrl:
@@ -37,7 +37,6 @@ const allBlogPosts = [
     imageUrl:
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
   },
-  // Add more blog posts here
 ];
 
 const categories = ['All', 'React', 'JavaScript', 'CSS', 'TypeScript'];
